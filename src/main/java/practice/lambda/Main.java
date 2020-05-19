@@ -34,7 +34,12 @@ public class Main {
         declarativeApproach(names);
         declarativeApproachWIthMethodReference(names);
         overrateAntonymousClass();
+        inferringArgumentsType();
 
+    }
+
+    private static void inferringArgumentsType() {
+        Operation op = (x, y) -> x+ y;
     }
 
     private static void overrateAntonymousClass() {
