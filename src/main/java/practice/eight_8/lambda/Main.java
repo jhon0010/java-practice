@@ -1,4 +1,4 @@
-package practice.lambda;
+package practice.eight_8.lambda;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -39,12 +39,12 @@ public class Main {
     }
 
     private static void inferringArgumentsType() {
-        Operation op = (x, y) -> x+ y;
+        OperationFunctionalInterface op = (x, y) -> x+ y;
     }
 
     private static void overrateAntonymousClass() {
         // anonymous class implementation imperative way
-        Operation op = new Operation() {
+        OperationFunctionalInterface op = new OperationFunctionalInterface() {
             @Override
             public double sum(double num1, double num2) {
                 return num1 + num2;
@@ -53,7 +53,7 @@ public class Main {
         LOGGER.info("The result of operation is  = " + op.sum(14.5,78.6));
 
         // anonymous class implementation declarative way
-        Operation opLambda = (double num1, double num2) -> num1 * num2; // fake implementation for the example
+        OperationFunctionalInterface opLambda = (double num1, double num2) -> num1 * num2; // fake implementation for the example
         LOGGER.info("The result of lambda operation is  = " + opLambda.sum(14.5,78.6));
     }
 
