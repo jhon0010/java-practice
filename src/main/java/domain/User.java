@@ -11,8 +11,16 @@ public class User {
     private int age;
     private String name;
     private String lastName;
+    private Gender gender;
 
     public User() {
+    }
+
+    public User(int age, String name, String lastName, Gender gender) {
+        this.age = age;
+        this.name = name;
+        this.lastName = lastName;
+        this.gender = gender;
     }
 
     public User(int age, String name, String lastName) {
@@ -38,9 +46,12 @@ public class User {
     public static List<User> defaultList(){
 
         return asList(
-            new User(5,"Jhon", "Doe"),
-            new User(18, "Just", "Adult"),
-            new User(22,"Peter","Peter")
+            new User(27,"Jhon", "Doe", Gender.MALE),
+            new User(18, "Just", "Adult", Gender.MALE),
+            new User(27,"Maria","Doe", Gender.FEMALE),
+            new User(22,"Peter","Peter", Gender.MALE),
+            new User(40,"Fernanda","Other", Gender.FEMALE),
+            new User(27,"Estefania","Gonzales", Gender.FEMALE)
         );
     }
 
@@ -68,12 +79,21 @@ public class User {
         this.lastName = lastName;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "age=" + age +
+                ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
                 '}';
     }
-
 }
