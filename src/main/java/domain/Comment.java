@@ -1,33 +1,18 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Comment {
 
-    private List<String> comments;
+    private String comments;
 
-
-    public Comment() {
-        this.comments = new ArrayList<>();
-    }
-
-    public void addComment(String comment) {
-        this.comments.add(comment);
-    }
-
-    public List<String> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<String> comments) {
+    public Comment(String comments) {
         this.comments = comments;
     }
 
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "comments=" + comments +
-                '}';
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 }

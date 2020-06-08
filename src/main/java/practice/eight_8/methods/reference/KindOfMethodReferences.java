@@ -46,7 +46,7 @@ public class KindOfMethodReferences {
     private static void instanceReferenceMethod(List<User> users) {
         User u = new User();
         final boolean haveAdult = users.stream().anyMatch(u::isAdult);
-        LOGGER.info("THe instance reference method have adults " + haveAdult);
+        LOGGER.info("The instance reference method have adults " + haveAdult);
     }
 
     /**

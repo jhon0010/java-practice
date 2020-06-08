@@ -1,24 +1,26 @@
 package domain;
 
+import java.util.List;
+
 public class UserComments {
 
     private User user;
-    private Comment comment;
+    private List<Comment> comments;
 
     public UserComments() {
     }
 
-    public UserComments(User user, Comment comment) {
+    public UserComments(User user, List<Comment> comments) {
         this.user = user;
-        this.comment = comment;
+        this.comments = comments;
     }
 
-    public Comment getComment() {
-        return comment;
+    public List<Comment> getComments() {
+        return comments;
     }
 
-    public void setComment(Comment comment) {
-        this.comment = comment;
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     public User getUser() {
@@ -33,7 +35,7 @@ public class UserComments {
     public String toString() {
         return "UserComments{" +
                 "user=" + user +
-                ", comment=" + comment +
+                ", comment=" + comments +
                 '}';
     }
 }
