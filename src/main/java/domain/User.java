@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.Arrays.asList;
 
@@ -11,9 +12,18 @@ public class User {
     private int age;
     private String name;
     private String lastName;
+    private String email;
     private Gender gender;
 
     public User() {
+    }
+
+    public User(int age, String name, String lastName, String email, Gender gender) {
+        this.age = age;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.gender = gender;
     }
 
     public User(int age, String name, String lastName, Gender gender) {
@@ -41,6 +51,10 @@ public class User {
 
     public static boolean isValidUser(User user){
         return !user.name.equals(user.lastName);
+    }
+
+    public Optional<String> getEmail() {
+        return Optional.ofNullable(email);
     }
 
     public static List<User> defaultList(){
@@ -87,12 +101,17 @@ public class User {
         this.gender = gender;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "age=" + age +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
                 ", gender=" + gender +
                 '}';
     }
