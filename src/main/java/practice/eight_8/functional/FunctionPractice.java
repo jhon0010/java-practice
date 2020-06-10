@@ -6,9 +6,9 @@ import java.util.function.Function;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-public class FunctionNumbers {
+public class FunctionPractice {
 
-    private static final Logger LOGGER = getLogger(FunctionNumbers.class);
+    private static final Logger LOGGER = getLogger(FunctionPractice.class);
 
     public static void main(String[] args) {
 
