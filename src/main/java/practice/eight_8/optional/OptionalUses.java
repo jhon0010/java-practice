@@ -4,6 +4,7 @@ import domain.Gender;
 import domain.User;
 import org.slf4j.Logger;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -32,7 +33,7 @@ public class OptionalUses {
     }
 
     private static void useOptionalWithObjects() {
-        User user = new User(18, "John", "Doe", "john.DOE@GmAil.com", Gender.MALE);
+        User user = new User(18, "John", "Doe", "john.DOE@GmAil.com", Gender.MALE, "+0578978978987", LocalDate.now());
 
         String userEmailLowerCase = user.getEmail()
                 .map(String::toLowerCase)

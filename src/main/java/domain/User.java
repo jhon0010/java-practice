@@ -1,5 +1,6 @@
 package domain;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,16 +15,20 @@ public class User {
     private String lastName;
     private String email;
     private Gender gender;
+    private String phoneNumber;
+    private LocalDate dateOfBirth;
 
     public User() {
     }
 
-    public User(int age, String name, String lastName, String email, Gender gender) {
+    public User(int age, String name, String lastName, String email, Gender gender,String phoneNumber, LocalDate dateOfBirth) {
         this.age = age;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public User(int age, String name, String lastName, Gender gender) {
@@ -103,6 +108,22 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     @Override
