@@ -1,4 +1,4 @@
-package practice.eight_8.lambda;
+package practice.eight_8.lambda.functional.interfaces;
 
 /**
  * The annotation only force to have one method in this interface.

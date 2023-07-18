@@ -49,7 +49,7 @@ public final class ImmutableClass {
     /**
      * This method allow to us to do a deep copy related to have an immutable class.
      *
-     * In other words this allow us to pass a copy (another memory reference object) when the
+     * In other words this allows us to pass a copy (another memory reference object) when the
      * other classes use it.
      *
      * @param metadata the real inner hashMap

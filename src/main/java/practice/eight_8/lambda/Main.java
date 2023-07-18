@@ -1,5 +1,8 @@
 package practice.eight_8.lambda;
 
+import practice.eight_8.lambda.functional.interfaces.Drawable;
+import practice.eight_8.lambda.functional.interfaces.OperationFunctionalInterface;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -35,7 +38,12 @@ public class Main {
         declarativeApproachWIthMethodReference(names);
         overrateAntonymousClass();
         inferringArgumentsType();
+        initializingFunctionalInterface();
+    }
 
+    private static void initializingFunctionalInterface(){
+        Drawable drawable = () -> LOGGER.info("Initializing a Drawable functional interface with a lambda expression");
+        drawable.draw();
     }
 
     private static void inferringArgumentsType() {

@@ -1,9 +1,6 @@
-import domain.Gender;
 import domain.User;
 import org.slf4j.Logger;
 import practice.eight_8.combinator_patterns.UserValidatorService;
-
-import java.time.LocalDate;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -15,7 +12,6 @@ public class Main {
         usingCombinationPatternValidator();
     }
 
-
     private static void usingCombinationPatternValidator () {
         UserValidatorService userValidator = UserValidatorService.isEmailValid()
                 .and(UserValidatorService.isAnAdult())
@@ -24,9 +20,7 @@ public class Main {
         User.defaultList()
                 .forEach(user -> LOGGER.info(userValidator.apply(user).toString()));
 
-
-        User u = new User(18, "Jhon", "Lotero", "jhon@gmail.com", Gender.MALE,
-                "+0354587", LocalDate.of(1990, 11, 16));
+        User u = User.getAnExampleUser();
 
         UserValidatorService.ValidationResult validationResult = UserValidatorService.isEmailValid()
                 .and(UserValidatorService.isAnAdult())
@@ -35,6 +29,4 @@ public class Main {
 
         LOGGER.info(validationResult.toString());
     }
-
-
 }

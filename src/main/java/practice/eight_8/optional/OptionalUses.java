@@ -33,7 +33,7 @@ public class OptionalUses {
     }
 
     private static void useOptionalWithObjects() {
-        User user = new User(18, "John", "Doe", "john.DOE@GmAil.com", Gender.MALE, "+0578978978987", LocalDate.now());
+        User user = User.getAnExampleUser();
 
         String userEmailLowerCase = user.getEmail()
                 .map(String::toLowerCase)

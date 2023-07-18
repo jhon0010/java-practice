@@ -28,7 +28,7 @@ import static practice.eight_8.combinator_patterns.UserValidatorService.Validati
  *         LOGGER.info(validationResult.toString());
  *
  *
- * This receives an user as an argument
+ * This receives a user as an argument
  * and returns a ValidationResult that is an enum with the validations
  */
 public interface UserValidatorService extends Function<User, ValidationResult> {
@@ -64,7 +64,7 @@ public interface UserValidatorService extends Function<User, ValidationResult> {
     }
 
     /**
-     * Enum with the possibles values for this validations.
+     * Enum with the possibles values for these validations.
      */
     enum ValidationResult {
         SUCCESS,

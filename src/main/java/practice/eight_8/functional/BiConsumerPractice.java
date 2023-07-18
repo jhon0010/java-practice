@@ -12,8 +12,7 @@ public class BiConsumerPractice {
     private static final Logger LOGGER = getLogger(BiConsumerPractice.class);
 
     public static void main(String[] args) {
-        User jhon = new User("Jhon");
-        jhon.setEmail("jhon.doe@gmail.com");
+        User jhon = User.getAnExampleUser();
 
         greetUserConsumerShowEmail.accept(jhon, false);
     }
