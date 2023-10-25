@@ -1,4 +1,4 @@
-package practice.common.threads;
+package practice.threads;
 
 public class ThreadExample {
 
