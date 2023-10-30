@@ -5,7 +5,6 @@ import java.util.Map;
 
 /**
  * Hashtable is a hash table based implementation of the Map interface. It permits null values and ONE null key.
- *
  *     This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will.
  */
 public class HashTableExample {

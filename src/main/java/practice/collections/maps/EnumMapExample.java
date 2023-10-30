@@ -8,7 +8,7 @@ enum Day {
 
 /**
  * EnumMap is a specialized Map implementation for use with enum type keys.
- * All of the keys in an enum map must come from a single enum type that is specified, explicitly or implicitly, when the map is created.
+ * All the keys in an enum map must come from a single enum type that is specified, explicitly or implicitly, when the map is created.
  * Fasts implementation = Enum maps are represented internally as arrays. This representation is extremely compact and efficient.
  *
  */

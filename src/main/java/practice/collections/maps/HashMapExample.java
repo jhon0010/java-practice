@@ -5,14 +5,10 @@ import java.util.Map;
 
 /**
  * HashMap is a hash table based implementation of the Map interface. It permits null values and ONE null key.
- *
  * This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will.
- *
  * The key is hashed, and the resulting hash code is used as the index at which the value is stored within the table,
  * internally this used an array of buckets for Entry objects and the hash defines which one to use.
- *
  * Similar to HashTable but is not synchronized.
- *
  */
 public class HashMapExample {
 
