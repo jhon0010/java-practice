@@ -1,19 +1,22 @@
 package practice.collections.maps;
 
+import java.util.NavigableMap;
 import java.util.SortedMap;
 
 /**
- * TreeMap is a Red-Black tree based NavigableMap implementation.
+ * TreeMap is a Red-Black tree based NavigableMap implementation from NavigableMap interface that extends from SortedMap.
+ *
  * The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time,
  * depending on which constructor is used.
- * This implementation provides guaranteed log(n) time cost for the containsKey, get, put and remove operations.
  *
+ * This implementation provides guaranteed log(n) time cost for the containsKey, get, put and remove operations.
  */
 public class TreeMapExample {
 
     public static void main(String[] args) {
 
-        SortedMap<String, Integer> ageMap = new java.util.TreeMap<>();
+        NavigableMap<String, Integer> ageMap = new java.util.TreeMap<>();
+        //SortedMap<String, Integer> ageMap = new java.util.TreeMap<>();
         ageMap.put("Zuly", 20);
         ageMap.put("Jhon", 30);
         ageMap.put("Alice", 31);
