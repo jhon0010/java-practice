@@ -8,9 +8,7 @@ import java.util.Map;
  * all the wrapper classes (like Integer, Boolean, Byte, Short) and String class is immutable.
  * We can create our own immutable class as well.
  *
- *
  * Following are the requirements:
- *
  *
  * The class must be declared as final (So that child classes can’t be created)
  * Data members in the class must be declared as private (So that direct access is not allowed)
