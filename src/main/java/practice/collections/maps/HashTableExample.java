@@ -4,8 +4,12 @@ import java.util.Hashtable;
 import java.util.Map;
 
 /**
+ * Synchronized, you can use it in a multithreaded environment without any issues.
+ *
  * Hashtable is a hash table based implementation of the Map interface. It permits null values and ONE null key.
  *     This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will.
+ *
+ *  It's a concrete extended version of AbstractMap.
  */
 public class HashTableExample {
 

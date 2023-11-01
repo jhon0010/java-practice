@@ -4,8 +4,20 @@ import java.util.Comparator;
 import java.util.TreeSet;
 
 /**
- * TreeSet is a class that implements the Set interface, which uses a tree for storage.
+ * TreeSet is a class that implements the NavigableSet interface which extends the SortedSet interface.
+ *
+ * It is based on a Red-Black tree data structure, which allows for efficient insertion, deletion,
+ * and retrieval of elements while maintaining them in sorted order.
+ *
+ * By default, a TreeSet orders its elements according to their natural ordering. Elements must be comparable or must
+ * be provided with a custom Comparator to determine their order.
+ *
+ * Don't allow null elements.
+ *
+ * Not synchronized
+ *
  * Objects are stored in sorted, ascending order.
+ *
  * Access and retrieval times are quite fast, which makes TreeSet an excellent choice when storing large amounts of
  * sorted information that must be found quickly.
  *  <p>

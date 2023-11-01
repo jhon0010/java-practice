@@ -4,10 +4,17 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * LinkedHashMap is a class that implements the Map interface, which uses a hash table for storage.
+ * LinkedHashMap is a specific implementation of the Map interface in Java that combines the
+ * features of a HashMap and a linked list to maintain the order of insertion.
+ *
  * When we say that LinkedHashMap is a "map", we mean that it cannot contain duplicate keys.
  * Objects that are stored in a LinkedHashMap are stored in insertion order.
  * Allow one null key.
+ *
+ * The performance characteristics of a LinkedHashMap are similar to those of a HashMap. It provides constant-time O(1)
+ * performance for basic operations like get(), put(), and remove(). However, maintaining the order comes with a slight
+ * overhead compared to a plain HashMap.
+ *
  */
 public class LinkedHashMapExample {
 

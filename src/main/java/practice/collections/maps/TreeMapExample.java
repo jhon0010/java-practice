@@ -6,7 +6,8 @@ import java.util.SortedMap;
 import java.util.TreeSet;
 
 /**
- * TreeMap is a Red-Black tree based NavigableMap implementation from NavigableMap interface that extends from SortedMap.
+ * TreeMap is a Red-Black tree (self-balancing binary search tree) based NavigableMap implementation
+ * from NavigableMap interface that extends from SortedMap.
  * The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time,
  * depending on which constructor is used.
  * This implementation provides guaranteed log(n) time cost for the containsKey, get, put and remove operations.

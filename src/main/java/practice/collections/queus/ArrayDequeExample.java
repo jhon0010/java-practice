@@ -3,13 +3,15 @@ package practice.collections.queus;
 import java.util.ArrayDeque;
 
 /**
+ *
+ *  Making it a double ended queue that means can act as a
+ *  FIFO (First In First Out) queue or a LIFO (Last In First Out) stack.
+ *
  * ArrayDeque is a resizable array implementation of the Deque interface.
- * Array deques have no capacity restrictions and they grow as necessary to support usage.
+ * Array dequeue have no capacity restrictions and they grow as necessary to support usage.
  * They are not thread-safe which means that in the absence of external synchronization,
  *
- * You can put and get elements to the beginning and end of the ArrayDeque.
- * Making it a double ended queue that means can act as a
- * FIFO (First In First Out) queue or a LIFO (Last In First Out) stack.
+ * You can put and get elements to the beginning or at the end of ArrayDeque.
  */
 public class ArrayDequeExample {
 
