@@ -1,4 +1,4 @@
-package practice.common;
+package practice.concepts;
 
 
 import org.slf4j.Logger;

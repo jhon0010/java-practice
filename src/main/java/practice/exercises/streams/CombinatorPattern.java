@@ -1,12 +1,14 @@
+package practice.exercises.streams;
+
 import domain.User;
 import org.slf4j.Logger;
 import practice.eight_8.combinator_patterns.UserValidatorService;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-public class Main {
+public class CombinatorPattern {
 
-    private static final Logger LOGGER = getLogger(Main.class);
+    private static final Logger LOGGER = getLogger(CombinatorPattern.class);
 
     public static void main(String[] args) {
         usingCombinationPatternValidator();

@@ -1,4 +1,4 @@
-package practice.common;
+package practice.concepts;
 
 import java.util.ArrayList;
 import java.util.List;

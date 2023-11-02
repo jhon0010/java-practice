@@ -1,3 +1,5 @@
+package practice.exercises.streams;
+
 import domain.Customer;
 import domain.User;
 
