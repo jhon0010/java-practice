@@ -1,5 +1,10 @@
 package practice.threads;
 
+/**
+ * This class shows how to create a thread in two different ways:
+ * - Extending the Thread class.
+ * - Implementing the Runnable interface.
+ */
 public class ThreadExample {
 
     public static void main(String[] args) {
@@ -24,6 +29,12 @@ public class ThreadExample {
         }
     }
 
+    /**
+     * This class extends the Thread class.
+     * It's a good practice to override the constructor and call the super constructor.
+     * You should override the run() method.
+     * Take into account that you can't extend another class.
+     */
     static class MyThreadExtended extends Thread {
 
         public MyThreadExtended() {
@@ -38,6 +49,12 @@ public class ThreadExample {
         }
     }
 
+    /**
+     * This class implements the Runnable interface.
+     * You should override the run() method.
+     * Take into account that you can extend another class.
+     * You can pass the Runnable object to the Thread constructor.
+     */
     static class MyThreadRunnable implements Runnable {
 
         public MyThreadRunnable() {
