@@ -40,6 +40,11 @@ public class HashMapExample {
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
+
+        // replace all values example
+        map.replaceAll((k, v) -> "Mr. " + v);
+        System.out.println(map.get(2));
+
     }
 
 }
