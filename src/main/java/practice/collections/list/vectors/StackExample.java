@@ -17,6 +17,13 @@ public class StackExample {
         // Creating a stack of strings
         Stack<String> stack = new Stack<>();
 
+        try {
+            // Popping an element from an empty stack throws an EmptyStackException
+            stack.pop();
+        } catch (Exception e) {
+            System.out.println("EmptyStackException: " + e.getMessage());
+        }
+
         // Pushing elements onto the stack
         stack.push("A");
         stack.push("B");
