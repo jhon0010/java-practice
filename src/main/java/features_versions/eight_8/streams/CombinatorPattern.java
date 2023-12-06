@@ -1,14 +1,13 @@
 package features_versions.eight_8.streams;
 
 import domain.User;
-import org.slf4j.Logger;
 import features_versions.eight_8.combinator_patterns.UserValidatorService;
 
-import static org.slf4j.LoggerFactory.getLogger;
+import java.util.logging.Logger;
 
 public class CombinatorPattern {
 
-    private static final Logger LOGGER = getLogger(CombinatorPattern.class);
+    private static final Logger LOGGER = Logger.getLogger(CombinatorPattern.class.getName());
 
     public static void main(String[] args) {
         usingCombinationPatternValidator();

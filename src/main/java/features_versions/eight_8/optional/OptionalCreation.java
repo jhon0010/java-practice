@@ -1,18 +1,15 @@
 package features_versions.eight_8.optional;
 
-import org.slf4j.Logger;
-
 import java.util.NoSuchElementException;
 import java.util.Optional;
-
-import static org.slf4j.LoggerFactory.getLogger;
+import java.util.logging.Logger;
 
 /**
  * Allow us to manage the possible null values in the better way.
  */
 public class OptionalCreation {
 
-    private static final Logger LOGGER = getLogger(OptionalCreation.class);
+    private static final Logger LOGGER = Logger.getLogger(OptionalCreation.class.getName());
 
     public static void main(String[] args) {
 
@@ -26,7 +23,7 @@ public class OptionalCreation {
             final Optional<Object> optNull = Optional.of(null);
             LOGGER.info("The Optional.of(null) get returns " + optNull.get());
         } catch (NullPointerException npe) {
-            LOGGER.error("The Optional.of(null).get returns NullPointerException , \n" +
+            LOGGER.warning("The Optional.of(null).get returns NullPointerException , \n" +
                     "because the constructor have requireNonNull clause");
         }
 
@@ -34,7 +31,7 @@ public class OptionalCreation {
             Optional<String> optionalEmpty = Optional.empty();
             LOGGER.info("The Optional.empty() get returns " + optionalEmpty.get()); // java.util.NoSuchElementException
         } catch (NoSuchElementException nsee) {
-            LOGGER.error("The Optional.empty().get returns NoSuchElementException , \n" +
+            LOGGER.warning("The Optional.empty().get returns NoSuchElementException , \n" +
                     " because the constructor have the value null (Wrapper)");
         }
 
@@ -43,7 +40,7 @@ public class OptionalCreation {
             Optional<String> optionalOfNullable = Optional.ofNullable(getString());
             LOGGER.info("The Optional.ofNullable(getString()).get returns " + optionalOfNullable.get());
         } catch (NoSuchElementException nsee) {
-            LOGGER.error("The Optional.ofNullable(getString()).get returns NoSuchElementException , \n" +
+            LOGGER.warning("The Optional.ofNullable(getString()).get returns NoSuchElementException , \n" +
                     " that means that getString() return null value");
         }
 

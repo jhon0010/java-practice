@@ -1,20 +1,17 @@
 package features_versions.eight_8.optional;
 
-import domain.Gender;
 import domain.User;
-import org.slf4j.Logger;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 import static java.util.Arrays.asList;
-import static org.slf4j.LoggerFactory.getLogger;
 
 public class OptionalUses {
 
-    private static final Logger LOGGER = getLogger(OptionalUses.class);
+    private static final Logger LOGGER = Logger.getLogger(OptionalUses.class.getName());
 
     public static void main(String[] args) {
 
@@ -51,11 +48,11 @@ public class OptionalUses {
                 .ifPresentOrElse(word -> {
                     LOGGER.info("The word " + word + " of nullable is present");
                 }, () -> {
-                    LOGGER.error("The expected world is not present, sorry man :(");
+                    LOGGER.warning("The expected world is not present, sorry man :(");
                 });
 
         Optional.ofNullable(possibleWorld)
-                .ifPresentOrElse(LOGGER::info, () -> LOGGER.error("The expected world is not present, sorry man :("));
+                .ifPresentOrElse(LOGGER::info, () -> LOGGER.warning("The expected world is not present, sorry man :("));
     }
 
     private static void orElseThrow(String possibleWorld) {
@@ -66,7 +63,7 @@ public class OptionalUses {
     private static void executingOrMethod(String possibleWorld) {
         Optional<String> executingOrMethod = Optional.ofNullable(possibleWorld)
                 .or(() -> {
-                    LOGGER.warn("Executing or method");
+                    LOGGER.warning("Executing or method");
                     //You can return also an Optional if you are not sure about if the value is present or not.
                     return Optional.of("or world!");
                 });
@@ -77,7 +74,7 @@ public class OptionalUses {
         String wordWithOrElse = Optional.ofNullable(possibleWorld)
                 .orElseGet(() -> {
                     // do another things
-                    LOGGER.warn("The expect word is null, trying to get the word from Redis");
+                    LOGGER.warning("The expect word is null, trying to get the word from Redis");
                     return "Word getting of some external tool like Redis";
                 });
         LOGGER.info("The or else word is ".concat(wordWithOrElse));

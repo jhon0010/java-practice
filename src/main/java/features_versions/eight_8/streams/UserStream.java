@@ -2,18 +2,16 @@ package features_versions.eight_8.streams;
 
 import domain.Gender;
 import domain.User;
-import org.slf4j.Logger;
 
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * the Stream API is used to process collections of objects.
@@ -22,7 +20,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  */
 public class UserStream {
 
-    private static final Logger LOGGER = getLogger(UserStream.class);
+    private static final Logger LOGGER = Logger.getLogger(UserStream.class.getName());
 
     public static void main(String[] args) {
 

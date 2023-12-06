@@ -1,12 +1,10 @@
 package core_concepts.concepts;
 
 
-import org.slf4j.Logger;
-
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * Class to practice regular expressions
@@ -35,7 +33,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  */
 public class RegularExpression {
 
-    private static final Logger LOGGER = getLogger(RegularExpression.class);
+    private static final Logger LOGGER = Logger.getLogger(RegularExpression.class.getName());
 
     public static void main(String[] args) {
 

@@ -1,18 +1,15 @@
 package features_versions.eight_8.streams;
 
-import org.slf4j.Logger;
-
 import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.List;
 import java.util.OptionalInt;
 import java.util.Random;
-
-import static org.slf4j.LoggerFactory.getLogger;
+import java.util.logging.Logger;
 
 public class OtherStreamExamples {
 
-    private static final Logger LOGGER = getLogger(OtherStreamExamples.class);
+    private static final Logger LOGGER = Logger.getLogger(OtherStreamExamples.class.getName());
 
 
     public static void main(String[] args) {

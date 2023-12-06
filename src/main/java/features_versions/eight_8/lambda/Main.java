@@ -6,6 +6,7 @@ import features_versions.eight_8.lambda.functional.interfaces.OperationFunctiona
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.logging.Logger;
 
 import static java.util.Arrays.asList;
 
@@ -28,7 +29,7 @@ import static java.util.Arrays.asList;
  */
 public class Main {
 
-    private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(Main.class);
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
 

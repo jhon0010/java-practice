@@ -1,18 +1,17 @@
 package features_versions.eight_8.methods.reference;
 
 import domain.User;
-import org.slf4j.Logger;
 
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
-import static org.slf4j.LoggerFactory.getLogger;
 
 
 public class KindOfMethodReferences {
 
-    private static final Logger LOGGER = getLogger(KindOfMethodReferences.class);
+    private static final Logger LOGGER = Logger.getLogger(KindOfMethodReferences.class.getName());
 
     public static void main(String[] args) {
 

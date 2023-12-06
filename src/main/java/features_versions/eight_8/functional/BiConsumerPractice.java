@@ -1,15 +1,14 @@
 package features_versions.eight_8.functional;
 
 import domain.User;
-import org.slf4j.Logger;
 
 import java.util.function.BiConsumer;
+import java.util.logging.Logger;
 
-import static org.slf4j.LoggerFactory.getLogger;
 
 public class BiConsumerPractice {
 
-    private static final Logger LOGGER = getLogger(BiConsumerPractice.class);
+    private static final Logger LOGGER = Logger.getLogger(BiConsumerPractice.class.getName());
 
     public static void main(String[] args) {
         User jhon = User.getAnExampleUser();

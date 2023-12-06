@@ -1,10 +1,7 @@
 package features_versions.eight_8.functional;
 
-import org.slf4j.Logger;
-
 import java.util.function.Predicate;
-
-import static org.slf4j.LoggerFactory.getLogger;
+import java.util.logging.Logger;
 
 /**
  * Takes one argument and return a boolean value.
@@ -13,7 +10,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  */
 public class PredicatePractice {
 
-    private static final Logger LOGGER = getLogger(PredicatePractice.class);
+    private static final Logger LOGGER = Logger.getLogger(PredicatePractice.class.getName());
 
     public static void main(String[] args) {
 

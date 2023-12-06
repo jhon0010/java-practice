@@ -1,17 +1,14 @@
 package features_versions.eight_8.functional;
 
-import org.slf4j.Logger;
-
 import java.util.function.Supplier;
-
-import static org.slf4j.LoggerFactory.getLogger;
+import java.util.logging.Logger;
 
 /**
  * Supplier for results
  */
 public class SupplierPractice {
 
-    private static final Logger LOGGER = getLogger(SupplierPractice.class);
+    private static final Logger LOGGER = Logger.getLogger(SupplierPractice.class.getName());
 
     public static void main(String[] args) {
 

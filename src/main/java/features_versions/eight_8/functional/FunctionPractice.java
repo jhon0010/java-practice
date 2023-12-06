@@ -1,17 +1,14 @@
 package features_versions.eight_8.functional;
 
-import org.slf4j.Logger;
-
 import java.util.function.Function;
-
-import static org.slf4j.LoggerFactory.getLogger;
+import java.util.logging.Logger;
 
 /**
  * A first order function is the one that is referenced by the class, receive a function and return a function.
  */
 public class FunctionPractice {
 
-    private static final Logger LOGGER = getLogger(FunctionPractice.class);
+    private static final Logger LOGGER = Logger.getLogger(FunctionPractice.class.getName());
 
     public static void main(String[] args) {
 

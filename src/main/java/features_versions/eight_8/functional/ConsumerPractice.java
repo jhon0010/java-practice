@@ -1,12 +1,10 @@
 package features_versions.eight_8.functional;
 
 import domain.User;
-import org.slf4j.Logger;
 
 import java.util.Optional;
 import java.util.function.Consumer;
-
-import static org.slf4j.LoggerFactory.getLogger;
+import java.util.logging.Logger;
 
 /**
  * Consumer = Is a method that takes one argument and return nothing (void).
@@ -14,7 +12,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  */
 public class ConsumerPractice {
 
-    private static final Logger LOGGER = getLogger(ConsumerPractice.class);
+    private static final Logger LOGGER = Logger.getLogger(ConsumerPractice.class.getName());
 
     public static void main(String[] args) {
         User jhon = User.getAnExampleUser();
