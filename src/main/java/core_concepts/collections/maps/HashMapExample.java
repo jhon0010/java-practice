@@ -4,14 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Similar to HashTable but is not synchronized.
+ * Example of using HashMap in Java.
  *
- * HashMap is a hash table based implementation of the Map interface. It permits null values and ONE null key.
- * This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will.
- * The key is hashed, and the resulting hash code is used as the index at which the value is stored within the table,
- * internally this used an array of buckets for Entry objects and the hash defines which one to use.
- *
- * It's a concrete extended version of AbstractMap.
+ * HashMap is a hash table based implementation of the Map interface. It allows null values and one null key.
+ * It does not guarantee the order of elements. HashMap is not synchronized and should be used with caution in multi-threaded environments.
+ * For a synchronized version, consider using Collections.synchronizedMap() or ConcurrentHashMap.
  */
 public class HashMapExample {
 
@@ -28,23 +25,32 @@ public class HashMapExample {
         map.put(3, "Three");
 
         // Retrieve values using keys
-        System.out.println(map.get(2));  // "Two"
+        System.out.println("Value for key 2: " + map.get(2));  // "Two"
 
         // Check if a key exists
-        System.out.println(map.containsKey(4));  // false
+        System.out.println("Does key 4 exist? " + map.containsKey(4));  // false
 
-        // One null key is allowed
-        map.put(null, "Only One Null is Allow it");
+        // Demonstrate the use of one null key
+        map.put(null, "Null Key Value");
+        System.out.println("Value for null key: " + map.get(null));
 
-        // Iterate through the map
-        for (Map.Entry<Integer, String> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
+        // Iterate through the map using forEach (Java 8 feature)
+        map.forEach((key, value) -> System.out.println(key + ": " + value));
 
-        // replace all values example
-        map.replaceAll((k, v) -> "Mr. " + v);
-        System.out.println(map.get(2));
+        // Replace all values in the map
+        map.replaceAll((k, v) -> "Number: " + v);
+        System.out.println("Value for key 2 after replaceAll: " + map.get(2));
 
+        // Demonstrate removal of a key-value pair
+        map.remove(10);
+        System.out.println("Is key 10 present after removal? " + map.containsKey(10));
+
+        // Print the size of the map
+        System.out.println("Size of map: " + map.size());
+
+        // Clear the map
+        map.clear();
+        System.out.println("Is the map empty after clear? " + map.isEmpty());
     }
-
 }
+
