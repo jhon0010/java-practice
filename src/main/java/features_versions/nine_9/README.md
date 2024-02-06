@@ -16,7 +16,7 @@ received significant updates to make it more robust and versatile.
 
 - **@Deprecated Tag Changes**: Changes to the deprecated annotation. 
 - **Java Platform Module System (Jigsaw Project)**: Introduces a modular approach to Java applications. 
-- **JShell Command Line Tool**: An interactive tool for Java code execution.
+- **JShell Command Line Tool**: The JShell command line tool, introduced in Java 9, is an interactive Read-Evaluate-Print Loop (REPL) that allows for the execution of Java code snippets and expressions in real-time without the need to compile a full Java program. This tool significantly enhances the learning and exploration experience for Java developers.
 - **Multi-release JAR Files**: Support for JARs that can run on multiple Java versions.
 - **Multi-Resolution Image API**: Supports images with different resolutions.
 - **Platform and JVM Logging**: Enhanced logging capabilities.
