@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     implementation 'org.projectlombok:lombok:1.18.22'
+    implementation 'org.json:json:20210307'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
 
