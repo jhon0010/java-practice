@@ -1,11 +1,15 @@
 package features_versions.sixteen_16.basics;
 
-import jdk.incubator.vector.IntVector;
+//import jdk.incubator.vector.IntVector;
 
 /**
  * The Vector API is in its initial incubation phase for Java 16. The idea of this API is to provide a means of vector
  * computations that will ultimately be able to perform more optimally (on supporting CPU architectures)
  * than the traditional scalar method of computations.
+ *
+ * Make sure to add --add-modules jdk.incubator.vector to the command line to run this code.
+ *
+ * I put in comments to avoid compilation errors for the majority of the people.
  */
 public class VectorApiIncubator {
 
@@ -42,11 +46,13 @@ public class VectorApiIncubator {
         int[] a = {1, 2, 3, 4};
         int[] b = {5, 6, 7, 8};
         int[] c = new int[a.length];
-
+        /*
         var vectorA = IntVector.fromArray(IntVector.SPECIES_128, a, 0);
         var vectorB = IntVector.fromArray(IntVector.SPECIES_128, b, 0);
         var vectorC = vectorA.mul(vectorB);
         vectorC.intoArray(c, 0);
+
+         */
     }
 
 }
