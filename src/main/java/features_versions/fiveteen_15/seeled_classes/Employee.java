@@ -1,4 +1,4 @@
-package features_versions.fiveteen.seeled_classes;
+package features_versions.fiveteen_15.seeled_classes;
 
 /**
  * The Employee class extends the Person class, which is sealed.

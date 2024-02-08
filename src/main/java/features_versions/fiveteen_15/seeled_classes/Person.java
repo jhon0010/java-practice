@@ -1,4 +1,4 @@
-package features_versions.fiveteen.seeled_classes;
+package features_versions.fiveteen_15.seeled_classes;
 
 /**
  * Sealed classes restrict which other classes may extend or implement them, allow more control over the inheritance hierarchy.

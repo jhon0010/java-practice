@@ -1,4 +1,4 @@
-package features_versions.fiveteen.seeled_classes;
+package features_versions.fiveteen_15.seeled_classes;
 
 /**
  * This is just a simple example to show how sealed classes work with Polymorphism ina  more restricted way.
