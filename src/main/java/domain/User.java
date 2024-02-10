@@ -1,9 +1,5 @@
 package domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,10 +7,6 @@ import java.util.Optional;
 
 import static java.util.Arrays.asList;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class User {
 
     private static final int THRESHOLD_ADULT = 18;
@@ -27,6 +19,9 @@ public class User {
     private String phoneNumber;
     private LocalDate dateOfBirth;
 
+    public User() {
+    }
+
     public User(String name) {
         this.name = name;
     }
@@ -36,6 +31,10 @@ public class User {
         this.name = name;
         this.lastName = lastName;
         this.gender = gender;
+    }
+
+    public boolean isAdult(User u) {
+        return u.age >= THRESHOLD_ADULT;
     }
 
     public static boolean isValidUser(User user) {
@@ -58,19 +57,62 @@ public class User {
     }
 
     public static User getAnExampleUser() {
-
-        return User.builder()
-                .name("Jhon")
-                .lastName("Lotero")
-                .phoneNumber("123456789")
-                .dateOfBirth(LocalDate.of(1990, 11, 16))
-                .email(Optional.of("jhon@gmail.com"))
-                .gender(Gender.MALE)
-                .build();
+        return new User(27, "Jhon","",  Gender.MALE);
     }
 
-    public boolean isAdult(User user) {
-        return user.age >= THRESHOLD_ADULT;
+    public int getAge() {
+        return age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Optional<String> getEmail() {
+        return email;
+    }
+
+    public void setEmail(Optional<String> email) {
+        this.email = email;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 }
