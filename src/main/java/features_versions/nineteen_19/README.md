@@ -1,5 +1,7 @@
 # Java 19
 
+Good resource: https://mkyong.com/java/what-is-new-in-java-19/
+
 ## Preview Features:
 
 Record Patterns (JEP 405): Enables deconstructing record values using patterns for clearer and more concise code.
