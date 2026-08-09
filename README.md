@@ -1,3 +1,11 @@
+# Project config
+
+## Java version
+
+For this project, Java 26 is required.
+
+- Java 26
+
 # Java Practice
 
 This repository is dedicated to reviewing and revising basic Java concepts. It serves as a comprehensive guide for those who are new to Java or those who want to refresh their knowledge. The repository covers a wide range of topics, from basic syntax to more complex concepts like threading and collections.

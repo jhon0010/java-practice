@@ -21,10 +21,8 @@ public class ScopedValueExample {
 
     public static void main(String[] args) {
         // Set the scoped value to the currently logged-in user
-        ScopedValue.where(LOGGED_IN_USER, getCurrentUser()).run(() -> {
-            // Process the user request
-            processUserRequest();
-        });
+        // Process the user request
+        ScopedValue.where(LOGGED_IN_USER, getCurrentUser()).run(ScopedValueExample::processUserRequest);
         System.out.println();
     }
 
@@ -32,7 +30,7 @@ public class ScopedValueExample {
         // Retrieve the logged-in user from the scoped value
         User user = LOGGED_IN_USER.get();
         // Process the user request
-        System.out.println(STR."Processing user request for \{user.getName() + " (" + user.getLastName()  + ")"}");
+        System.out.println("Processing user request for " + user.getName() + " (" + user.getLastName()  + ")");
     }
 
     public static User getCurrentUser() {

@@ -28,14 +28,15 @@ public class SequencedCollectionExamples {
         languages.add("Italian");
         languages.addFirst("Portuguese");
 
-        System.out.println(STR."First lengage = \{languages.getFirst()}");
-        System.out.println(STR."Last lengage = \{languages.getLast()}");
+        System.out.println("First language = " + languages.getFirst());
+        System.out.println("Last language = " + languages.getLast());
 
-        languages.containsAll(List.of("Portuguese", "English", "Spanish", "French", "Italian"));
+        boolean itContainsAll = languages.containsAll(List.of("Portuguese", "English", "Spanish", "French", "Italian"));
+        System.out.println("Contains all = " + itContainsAll);
 
         SequencedCollection<String> reversed = languages.reversed();
         boolean containsAll = reversed.containsAll(List.of("Italian", "French", "Spanish", "English", "Portuguese"));
-        System.out.println(STR."Reversed contains all = \{containsAll}");
+        System.out.println("Reversed contains all = " + containsAll);
     }
 
 }

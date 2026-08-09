@@ -1,5 +1,13 @@
 package features_versions.twentyone_21.base;
 
+
+/**
+ * String Template Feature Got deprecated in followed Java version this is just for reference
+ */
+
+/*
+import static java.lang.StringTemplate.RAW;
+
 public class StringTemplateFeature {
 
     public static void main(String[] args) {
@@ -8,9 +16,6 @@ public class StringTemplateFeature {
 
         String jsonBlock= interpolationOfJSONBlock("hot", "30", "C");
         System.out.println(STR."jsonBlock = \{jsonBlock}");
-
-        String usingTemplate= usingTemplate("hot", "30", "C");
-        System.out.println(STR."usingTemplate = \{usingTemplate}");
     }
 
     static String interpolationUsingSTRProcessor(String feelsLike, String temperature, String unit) {
@@ -29,21 +34,6 @@ public class StringTemplateFeature {
       """ ;
     }
 
-    /**
-     * we obtain an instance of a template, StringTemplate, by evaluating to the right of the dot operator.
-     *
-     * RAW is the standard template processor that produces an unprocessed StringTemplate type object.
-     *
-     * Finally, we pass the StringTemplate str instance to the process() method of the processor(which in our case is STR):
-     * @param feelsLike
-     * @param temperature
-     * @param unit
-     * @return
-     */
-    static String usingTemplate(String feelsLike, String temperature, String unit){
-        StringTemplate str = StringTemplate.RAW. "Today's weather is \{ getFeelsLike() }, with a temperature of \{ getTemperature() } degrees \{ getUnit() }" ;
-        return STR.process(str);
-    }
 
     private static Integer getUnit() {
         return 2;
@@ -58,3 +48,4 @@ public class StringTemplateFeature {
     }
 
 }
+*/

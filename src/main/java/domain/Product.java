@@ -28,7 +28,9 @@ public class Product {
                 new Product("2", "Product 2", 200.0, "Category 2", new Date(), Comment.getExampleCommentList()),
                 new Product("3", "Product 3", 300.0, "Category 3", new Date(), Comment.getExampleCommentList()),
                 new Product("4", "Product 4", 400.0, "Category 4", new Date(), Comment.getExampleCommentList()),
-                new Product("5", "Product 5", 500.0, "Category 5", new Date(), Comment.getExampleCommentList())
+                new Product("5", "Product 5", 500.0, "Category 5", new Date(), Comment.getExampleCommentList()),
+                new Product("4", "Product 4", 4000.0, "Category 4", new Date(), Comment.getExampleCommentList()),
+                new Product("5", "Product 5", 5000.0, "Category 5", new Date(), Comment.getExampleCommentList())
         );
     }
 

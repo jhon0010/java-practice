@@ -21,8 +21,8 @@ public class ProcessBuilderImprovements {
 
         logger.log(System.Logger.Level.INFO, "Starting a new process");
         Process process = processBuilder.start();
-        System.out.println(STR."Process started info : \{process.info()}");
-        System.out.println(STR."Process started PID : \{process.pid()}");
+        System.out.println("Process started info : " + process.info());
+        System.out.println("Process started PID : " + process.pid());
         process.destroy();
     }
 

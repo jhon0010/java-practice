@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.StructuredTaskScope;
 
 /**
  * JEP 266: More Concurrency Updates
@@ -16,14 +15,12 @@ public class StructuredConcurrencyAPI {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         StructuredConcurrencyAPI api = new StructuredConcurrencyAPI();
-        api.structuredConcurrency();
+        //api.structuredConcurrency();
     }
 
     /**
      * Example with executors and futures.
      * @return Response
-     * @throws ExecutionException
-     * @throws InterruptedException
      */
     Response handleUnStructureAPI() throws ExecutionException, InterruptedException {
         try (var executor = Executors.newFixedThreadPool(10)) {
@@ -35,22 +32,21 @@ public class StructuredConcurrencyAPI {
         }
     }
 
-    /**
+    /*
      * Example with structured concurrency.
-     * @throws ExecutionException
-     * @throws InterruptedException
+     * WORKING ON JAVA 19
      */
-    public void structuredConcurrency() throws ExecutionException, InterruptedException {
-
-        try (var scope = new StructuredTaskScope()) {
-
-            StructuredTaskScope.Subtask user = scope.fork(this::findUser);
-            StructuredTaskScope.Subtask order = scope.fork(this::fetchOrder);
-            scope.join();           // Join both forks
-            // Here, both forks have succeeded, so compose their results
-            System.out.println(new Response((String) user.get(), (Integer) order.get()));
-        }
-    }
+    /**
+     *     public void structuredConcurrency() throws InterruptedException {
+     *         try (var scope = new StructuredTaskScope()) {
+     *             StructuredTaskScope.Subtask<String> user = scope.fork(this::findUser);
+     *             StructuredTaskScope.Subtask<Integer> order = scope.fork(this::fetchOrder);
+     *             scope.join();           // Join both forks
+     *             // Here, both forks have succeeded, so compose their results
+     *             System.out.println(new Response(user.get(), order.get()));
+     *         }
+     *     }
+     */
 
 
     private String findUser() throws InterruptedException {

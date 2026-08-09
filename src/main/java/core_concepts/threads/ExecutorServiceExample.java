@@ -34,7 +34,7 @@ public class ExecutorServiceExample {
         // This method simulates the heavy work
         private static void generatePDF(int userId) {
             String threadName = Thread.currentThread().getName();
-            System.out.println(STR."Processing User \{userId} on \{threadName}");
+            System.out.println("Processing User " + userId + threadName);
 
             try {
                 // Simulate 2 seconds to generate a PDF

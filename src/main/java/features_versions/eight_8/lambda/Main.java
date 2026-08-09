@@ -1,91 +1,110 @@
 package features_versions.eight_8.lambda;
 
-import features_versions.eight_8.lambda.functional.interfaces.Drawable;
-import features_versions.eight_8.lambda.functional.interfaces.OperationFunctionalInterface;
-
-import java.util.Collections;
 import java.util.Comparator;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
-import java.util.logging.Logger;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
-import static java.util.Arrays.asList;
-
-/**
- * A lambda expression is mainly build by :
- *
- *      Parameters | Operator | expression to evaluate
- *
- * For example :
- *
- *      (String name1, String name2) -> name1.compareTo(name2)
- *
- * Imperative = How to do something , step by step.
- * Declarative = What do you want to do.
- *
- * The lambda code is more concise and declarative than the imperative approach.
- *
- * All anonymous class can be replaced by lambda expression.
- *
- */
 public class Main {
 
-    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+    record Product(String name, String category, double price) {}
+    record Order(int id, String customerName, List<Product> products) {}
+    record Employee(String name, String department, String city, double salary) {}
 
     public static void main(String[] args) {
+        List<Product> tech = List.of(
+                new Product("Laptop", "Tech", 1200.0),
+                new Product("Mouse", "Tech", 25.0),
+                new Product("Keyboard", "Tech", 75.0)
+        );
 
-        List<String> names = asList("John", "Doe", "Bean", "Peter");
-        imperativeApproach(names);
-        declarativeApproach(names);
-        declarativeApproachWIthMethodReference(names);
-        overrateAntonymousClass();
-        inferringArgumentsType();
-        initializingFunctionalInterface();
+        List<Product> home = List.of(
+                new Product("Lamp", "Home", 40.0),
+                new Product("Chair", "Home", 150.0)
+        );
+
+        List<Order> orders = List.of(
+                new Order(101, "Alice", tech),
+                new Order(102, "Bob", home),
+                new Order(103, "Charlie", List.of(new Product("Laptop", "Tech", 1200.0))),
+                new Order(104, "Alice", List.of(new Product("Headphones", "Tech", 100.0)))
+        );
+
+        List<Employee> employees = List.of(
+                new Employee("Alice", "Tech", "New York", 120000),
+                new Employee("Bob", "Sales", "New York", 80000),
+                new Employee("Charlie", "Tech", "London", 150000),
+                new Employee("Dave", "Sales", "London", 90000),
+                new Employee("Eve", "HR", "New York", 60000),
+                new Employee("Frank", "Tech", "London", 130000)
+        );
+
+        // get all tech products sorted by price desc
+        orders.stream()
+                .flatMap(o -> o.products.stream())
+                .filter(p -> p.category.equals("Tech"))
+                .distinct()
+                .sorted(Comparator.comparingDouble(Product::price))
+                .forEach(System.out::println);
+
+
+        // get total buy price for each customer
+        orders.stream()
+                .collect(Collectors.groupingBy(
+                        Order::customerName,
+                        Collectors.summingDouble(o -> o.products.stream().mapToDouble(Product::price).sum())
+                ))
+        .forEach((customerName, total) -> System.out.println(customerName + ": " + total));
+
+        // get total buy price for each category
+        orders.stream()
+                .flatMap(o -> o.products.stream())
+                .collect(Collectors.groupingBy(
+                        Product::category,
+                        Collectors.summingDouble(Product::price)
+                ))
+                .forEach((category, total) -> System.out.println(category + ": " + total));
+
+        // get order with most products
+        orders.stream()
+                .max(Comparator.comparingInt(o -> o.products.size()))
+                .ifPresent(System.out::println);
+
+        Map<String, Map<String,List<Employee>>> employeesByCityAndDepartment = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee::city,
+                        Collectors.groupingBy(
+                                Employee::department
+                        )
+                ));
+        System.out.println(employeesByCityAndDepartment.get("New York").get("Tech"));
+
+
+        Map<String, Optional<Employee>> maxSalaryByDepartment = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee::department,
+                        Collectors.maxBy(Comparator.comparingDouble(e -> e.salary))
+                ));
+        maxSalaryByDepartment.forEach((department, employee) -> System.out.println(department + ": " + employee.get().name));
+
+
+        Map<Boolean, List<String>> employesOver100 = employees.stream()
+                .collect(Collectors.partitioningBy(
+                        e -> e.salary > 100000,
+                        Collectors.mapping(Employee::name, Collectors.toList())
+                        )
+                );
+        System.out.println(employesOver100.get(true));
+        System.out.println(employesOver100.get(false));
+
+
+        DoubleSummaryStatistics employeesStats = employees.stream()
+                .filter(e -> e.department.equals("Tech"))
+                .collect(Collectors.summarizingDouble(e -> e.salary));
+
+        System.out.println(employeesStats);
+
     }
-
-    private static void initializingFunctionalInterface(){
-        Drawable drawable = () -> LOGGER.info("Initializing a Drawable functional interface with a lambda expression");
-        drawable.draw();
-    }
-
-    private static void inferringArgumentsType() {
-        OperationFunctionalInterface op = (x, y) -> x+ y;
-    }
-
-    private static void overrateAntonymousClass() {
-        // anonymous class implementation imperative way
-        OperationFunctionalInterface op = new OperationFunctionalInterface() {
-            @Override
-            public double sum(double num1, double num2) {
-                return num1 + num2;
-            }
-        };
-        LOGGER.info("The result of operation is  = " + op.sum(14.5,78.6));
-
-        // anonymous class implementation declarative way
-        OperationFunctionalInterface opLambda = (double num1, double num2) -> num1 * num2; // fake implementation for the example
-        LOGGER.info("The result of lambda operation is  = " + opLambda.sum(14.5,78.6));
-    }
-
-    private static void declarativeApproachWIthMethodReference(List<String> names) {
-        Collections.sort(names, String::compareTo);
-        LOGGER.info("[declarativeApproachWIthMethodReference] The sorted list is = " + names);
-    }
-
-    private static void declarativeApproach(List<String> names) {
-        //with lambda expression
-        Collections.sort(names, (String name1, String name2) -> name1.compareTo(name2));
-        LOGGER.info("[declarativeApproach] The sorted list is = " + names);
-    }
-
-    private static void imperativeApproach(List<String> names) {
-        // java 7 style
-        Collections.sort(names, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
-        LOGGER.info("[imperativeApproach] The sorted list is = " + names);
-    }
-
 }

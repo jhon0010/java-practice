@@ -11,29 +11,32 @@ import java.util.concurrent.Future;
 public class VirtualThreads {
 
     public static void main(String[] args) {
-
-
         virtualThreadsExample();
-        //virtualThreadsExample2();
     }
 
     public static void virtualThreadsExample2() {
         long start = System.currentTimeMillis();
-
         List<Future<Integer>> results = new ArrayList<>();
 
         // 1. Using the new Virtual Thread Executor
         try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
             results = IntStream.range(0, 100_0000).mapToObj(i -> {
                 return executor.submit(() -> {
-                    // Simulate I/O (Database/API call)
-                    Thread.sleep(Duration.ofSeconds(1));
-                    //System.out.println("Task " + i + " completed");
+
+                    if (i % 2 == 0) {
+                        /*
+                          Mounter/Unmounted Mechanism: * When a virtual thread starts,
+                          the JVM "mounts" it onto a platform thread (called a Carrier Thread).
+                         */
+                        Thread.sleep(Duration.ofSeconds(1)); // Simulate I/O (Database/API call)
+                    }
+                    System.out.println("Task " + i + " completed");
                     return i;
                 });
             }).toList();
         } // Executor auto-closes after all tasks finish
 
+        // 2. Process the results
         results.forEach( future -> {
             try {
                 // .get() retrieves the value (or throws an exception if the task failed)

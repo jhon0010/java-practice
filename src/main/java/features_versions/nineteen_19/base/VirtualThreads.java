@@ -21,7 +21,7 @@ public class VirtualThreads {
     public static void usingVirtualThreads() {
 
         long startTime = System.currentTimeMillis();
-        System.out.println(STR."Using virtual threads start time: \{startTime}");
+        System.out.println("Using virtual threads start time: " + startTime);
 
         // finish within 1 second
         try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
@@ -34,8 +34,8 @@ public class VirtualThreads {
         }
 
         long endTime = System.currentTimeMillis();
-        System.out.println(STR."Using virtual threads end time: \{endTime}");
-        System.out.println(STR."Using virtual threads duration: \{endTime - startTime}");
+        System.out.println("Using virtual threads end time:"  + endTime);
+        System.out.println("Using virtual threads duration:" + (endTime - startTime) + "ms");
 
     }
 
@@ -46,7 +46,7 @@ public class VirtualThreads {
     public static void usingNewFixedThreadPool() {
 
         long startTime = System.currentTimeMillis();
-        System.out.println(STR."Using newFixedThreadPool start time: \{startTime}");
+        System.out.println("Using newFixedThreadPool start time: " + startTime);
 
         // 10_000/20 = 500seconds, it takes 8 minutes and 33 seconds to finish it
         try (var executor = Executors.newFixedThreadPool(20)) {
@@ -59,8 +59,8 @@ public class VirtualThreads {
         }
 
         long endTime = System.currentTimeMillis();
-        System.out.println(STR."Using newFixedThreadPool end time: \{endTime}");
-        System.out.println(STR."Using newFixedThreadPool duration: \{endTime - startTime}");
+        System.out.println("Using newFixedThreadPool end time: " + endTime);
+        System.out.println("Using newFixedThreadPool duration: " + (endTime - startTime));
 
     }
 

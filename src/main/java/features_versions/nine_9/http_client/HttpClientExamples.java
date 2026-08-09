@@ -1,8 +1,5 @@
 package features_versions.nine_9.http_client;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.FileNotFoundException;
 import java.net.Authenticator;
 import java.net.CookieManager;
@@ -69,21 +66,6 @@ public class HttpClientExamples {
                 .GET()
                 .build();
 
-        try {
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            JSONObject jsonResponse = new JSONObject(response.body());
-            JSONObject query = jsonResponse.getJSONObject("query");
-            JSONArray searchResults = query.getJSONArray("search");
-
-            System.out.println("Search results for: " + topic);
-            for (int i = 0; i < searchResults.length(); i++) {
-                JSONObject article = searchResults.getJSONObject(i);
-                System.out.println((i + 1) + ": " + article.getString("title") + ", that have a number of word = " + article.get("wordcount"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     /**

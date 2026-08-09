@@ -66,7 +66,7 @@ public interface UserValidatorService extends Function<User, ValidationResult> {
     /**
      * Enum with the possibles values for these validations.
      */
-    enum ValidationResult {
+    enum    ValidationResult {
         SUCCESS,
         EMAIL_INVALID,
         EMPTY_EMAIL,

@@ -14,7 +14,7 @@ public class EmojiSupportTools {
         System.out.println("👋🏽 Hello, Java 21!");
 
         boolean canHaveModifier = Character.isEmojiModifierBase('✋');
-        System.out.println(STR."Can have modifier: \{canHaveModifier}");
+        System.out.println("Can have modifier: " + canHaveModifier);
 
         Set<Integer> emojis = new HashSet<>();
         emojis.add("😂".codePointAt(0));
